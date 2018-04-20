@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour 
 {
-	GameObject GameManagerGO; // refrence to our game manager
-	GameObject scoreUITextGO; // reference to the text UI game object
-	public GameObject ExplosionGO; // explosion prefab
+	// Refrence to our game manager.
+	GameObject GameManagerGO; 
+
+	// Reference to the text UI game object.
+	GameObject scoreUITextGO; 
+
+	// Explosion prefab.
+	public GameObject ExplosionGO; 
 
 	public float speed;
 	private int facing;
 
-	int life; // current enemy hp
+	// Current enemy hp.
+	int life; 
 
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () 
 	{
 		life = 75;
@@ -22,11 +28,14 @@ public class BossController : MonoBehaviour
 		GameManagerGO = GameObject.FindGameObjectWithTag ("GameManagerTag");
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame.
 	void Update () 
 	{
-		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0)); // bottom-left point of screen
-		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1)); // top-right point of screen
+		// Bottom-left point of screen.
+		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0)); 
+
+		// Top-right point of screen.
+		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1)); 
 
 		// 0 = facing right, 1 = facing left. 
 		if (facing == 1 && min.x+1 > gameObject.transform.position.x)
@@ -44,7 +53,7 @@ public class BossController : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		// collision of enemy ship with player ship, or player bullet. 
+		// Collision of enemy ship with player ship, or player bullet. 
 		if (other.tag == "PlayerBulletTag")
 		{
 			life--;
@@ -54,22 +63,22 @@ public class BossController : MonoBehaviour
 
 				scoreUITextGO.GetComponent<GameScore>().Score += 10000;
 
-				// Change game manager state to game over state
+				// Change game manager state to game over state.
 				GameManagerGO.GetComponent<GameManager>().SetGameManagerState(GameManager.GameManagerState.EndLevel);
 
-				
-				Destroy (gameObject); // Destroy boss's ship
+				// Destroy boss's ship.
+				Destroy (gameObject); 
 			}
 			
 		}
 	}
 
-	// instantiate explosion
+	// Instantiate explosion.
 	void PlayExplosion()
 	{
 		GameObject explosion = (GameObject)Instantiate (ExplosionGO);
 
-		// position of explosion
+		// Position of explosion.
 		explosion.transform.position = transform.position;
 	}
 }

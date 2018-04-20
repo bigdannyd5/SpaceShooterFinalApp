@@ -6,20 +6,34 @@ public class GameManager : MonoBehaviour
 {
 	public GameObject playButton;
 	public GameObject playerShip;
-	public GameObject enemySpawner; // reference to our enemy spawner
-	public GameObject GameOverGO; // reference to game over image
-	public GameObject scoreUITextGO; // reference to the score text UI game object
-	public GameObject TimeCounterGO; // reference to ther time counter game object
-	public GameObject GameTitleGo; // reference to the GameTitleGo
-	public GameObject ShootButton; // reference to the shoot button game object
-	public GameObject LeftButton; // reference to the left arrow button game object
-	public GameObject RightButton; // reference to the right arrow button game object
-	public GameObject meteorSpawner; // reference to our meteor spawner
-	public GameObject quitButton; // reference to the quit button game object
-	public GameObject storeButton; // reference to the store button game object
-	public GameObject nextLevelButton; // reference to the next level button
-	public GameObject BossSpawner; // reference to the BossSpawner
-	public GameObject retryButton; // reference to the retry button
+	// Reference to our enemy spawner.
+	public GameObject enemySpawner;
+	// Reference to game over image.
+	public GameObject GameOverGO; 
+	// Reference to the score text UI game object.
+	public GameObject scoreUITextGO; 
+	// Reference to ther time counter game object.
+	public GameObject TimeCounterGO; 
+	// Reference to the GameTitleGo.
+	public GameObject GameTitleGo; 
+	// Reference to the shoot button game object.
+	public GameObject ShootButton;
+	// Reference to the left arrow button game object.
+	public GameObject LeftButton; 
+	// Reference to the right arrow button game object.
+	public GameObject RightButton;
+	// Reference to our meteor spawner.
+	public GameObject meteorSpawner;
+	// Reference to the quit button game object.
+	public GameObject quitButton; 
+	// Reference to the store button game object.
+	public GameObject storeButton; 
+	// Reference to the next level button.
+	public GameObject nextLevelButton; 
+	// Reference to the BossSpawner.
+	public GameObject BossSpawner;
+	// Reference to the retry button.
+	public GameObject retryButton; 
     public GameObject introSong;
     public GameObject gameSong;
     public GameObject UserC;
@@ -29,10 +43,7 @@ public class GameManager : MonoBehaviour
 	public int level;
     public GameObject buttonMain;
     public GameObject creditButton;
-
     public bool GameIsPaused;
-
-
 
 	public enum GameManagerState
 	{
@@ -44,92 +55,91 @@ public class GameManager : MonoBehaviour
 
 	GameManagerState GMState;
 
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () 
 	{
         currentUser = FindObjectOfType<CurrentUser>().GetComponent<CurrentUser>().currentUser;
 		GMState = GameManagerState.Opening;
 	}
 	
-	// update game manager state
+	// Update game manager state.
 	void UpdateGameManagerState()
 	{
 		switch (GMState) 
 		{
 		case GameManagerState.Opening:
 
-			    // display the game title
+			    // Display the game title.
 			    GameTitleGo.SetActive (true);
 
                 creditButton.SetActive(true);
 
                 buttonMain.SetActive(false);
-                // Hide game over
+                // Hide game over.
                 GameOverGO.SetActive(false);
 
-			    // Display the game title
+			    // Display the game title.
 			    GameTitleGo.SetActive(true);
 
-			    // Set play button visible (active)
+			    // Set play button visible (active).
 			    playButton.SetActive(true);
 
-			
-
-			break;
+				break;
 		case GameManagerState.Gameplay:
 
-			// Reset the score
+			// Reset the score.
 			scoreUITextGO.GetComponent<GameScore> ().Score = 0;
 
-                buttonMain.SetActive(false);
-			// hide next level button
+            buttonMain.SetActive(false);
+
+			// Hide next level button.
 			nextLevelButton.SetActive(false);
 
-                creditButton.SetActive(false);
+            creditButton.SetActive(false);
 
-			// hide quit button
+			// Hide quit button.
 			quitButton.SetActive(false);
 
-			// hide store button
+			// Hide store button.
 			storeButton.SetActive(false);
 
-			// hide retry button 
+			// Hide retry button.
 			retryButton.SetActive(false);
 
-			// hide play button on game play state
+			// Hide play button on game play state.
 			playButton.SetActive (false);
 
-			// hide the game title
+			// Hide the game title.
 			GameTitleGo.SetActive (false);
 
-			// hide game over 
+			// Hide game over.
 			GameOverGO.SetActive(false);
 
-			// display the shoot button
+			// Display the shoot button.
 			ShootButton.SetActive (true);
 
-			// display the left arrow button
+			// Display the left arrow button.
 			LeftButton.SetActive (true);
 
-			// display the right arrow button
+			// Display the right arrow button.
 			RightButton.SetActive (true);
 
-            //display the pause button
+            // Display the pause button.
             PauseButton.SetActive(true);
 
-			// set the player visible (active) and init the player lives
+			// Set the player visible (active) and init the player lives.
 			playerShip.GetComponent<PlayerControl> ().Init ();
 
-			// start enemy spawner
+			// Start enemy spawner.
 			enemySpawner.GetComponent<EnemySpawner> ().ScheduleEnemySpawner ();
 
-			// start the time counter
+			// Start the time counter.
 			TimeCounterGO.GetComponent<TimeCounter> ().StartTimeCounter ();
 
-			// start meteor spawner
+			// Start meteor spawner.
 			meteorSpawner.GetComponent<MeteorSpawner> ().ScheduleMeteorSpawner ();
 
-            //stop intro muysic, start game music
+            // Stop intro muysic, start game music.
             introSong.GetComponent<AudioSource>().Stop();
             gameSong.GetComponent<PlayMusic>().PlayM();
 
@@ -149,43 +159,41 @@ public class GameManager : MonoBehaviour
                 currentUser.setCurrency(updatedCurrency);
                 UserC.GetComponent<CurrentUser>().Save(currentUser);
 
-                // if boss is active, and you lose, then set bossNumber to zero
+                // If boss is active, and you lose, then set bossNumber to zero.
                 TimeCounterGO.GetComponent<TimeCounter>().bossNumber = 0;
 
-			    // stop the time counter
+			    // Stop the time counter.
 			    TimeCounterGO.GetComponent<TimeCounter>().StopTimeCounter();
 
-			    // Stop enemy spawner
+			    // Stop enemy spawner.
 			    enemySpawner.GetComponent<EnemySpawner>().UnsheduleEnemySpawner();
 
-			    // stop meteor spawner
+			    // Stop meteor spawner.
 			    meteorSpawner.GetComponent<MeteorSpawner>().UnsheduleEnemySpawner();
 
-			    // destroy boss if it is there
+			    // Destroy boss if it is there.
 			    BossSpawner.GetComponent<BossSpawner>().DestroyBoss();
 
-			    // hide the shoot button
+			    // Hide the shoot button.
 			    ShootButton.SetActive(false);
 
-			    // hide the left arrow button
+			    // Hide the left arrow button.
 			    LeftButton.SetActive(false);
 
-			    /// hide the right arrow button
+			    /// Hide the right arrow button.
 			    RightButton.SetActive(false);
 
-                //hid the pause button
+                // HidE the pause button.
                 PauseButton.SetActive(false);
 
-			    // Display retry button
+			    // Display retry button.
 			    retryButton.SetActive(true);
 
-			    // Display game over
+			    // Display game over.
 			    GameOverGO.SetActive(true);
 
-                //stop music
+                // Stop music.
                 gameSong.GetComponent<PlayMusic>().StopM();
-
-			    // Change game manager state to Opening state after 5 seconds
 			    
 			break;
 		case GameManagerState.EndLevel:
@@ -210,65 +218,64 @@ public class GameManager : MonoBehaviour
                 currentUser.setCurrency(uC);
                 UserC.GetComponent<CurrentUser>().Save(currentUser);
 
-                // reseting the bossNumber, so it will respawn when we retry
+                // Reseting the bossNumber, so it will respawn when we retry.
                 TimeCounterGO.GetComponent<TimeCounter>().bossNumber = 0;
 
-                // this will only update highscore table if the score just received is higher than the
-                // the previously stored highscore
+                // This will only update highscore table if the score just received is higher than the
+                // the previously stored highscore.
                 if (currentUser.getHighScore() < scoreUITextGO.GetComponent <GameScore> ().Score)
                 {
                     currentUser.setHighScore(scoreUITextGO.GetComponent<GameScore>().Score);
                     UserC.GetComponent<CurrentUser> ().Save(currentUser);
                 }
 
-                //stop music
+                // Stop music.
                 gameSong.GetComponent<PlayMusic>().StopM();
 
                 creditButton.SetActive(false);
 
-                // scoreUITextGO.GetComponent<GameScore>().Score = 0;
                 buttonMain.SetActive(false);
-                // stop the time counter
+                // Stop the time counter.
                 TimeCounterGO.GetComponent<TimeCounter>().StopTimeCounter();
 
-			    // Stop enemy spawner
-			    enemySpawner.GetComponent<EnemySpawner>().UnsheduleEnemySpawner(); // This is probably already done since you're at the boss
+			    // Stop enemy spawner.
+			    enemySpawner.GetComponent<EnemySpawner>().UnsheduleEnemySpawner(); 
 
-			    // stop meteor spawner
-			    meteorSpawner.GetComponent<MeteorSpawner>().UnsheduleEnemySpawner(); // same as enemySpawner, possibly already done. 
+			    // Stop meteor spawner.
+			    meteorSpawner.GetComponent<MeteorSpawner>().UnsheduleEnemySpawner(); 
 
-			    // Display quit button
+			    // Display quit button.
 			    quitButton.SetActive(true);
 
-			    // Display store button
+			    // Display store button.
 			    storeButton.SetActive(true);
 
-			    // Display next level button
+			    // Display next level button.
 			    nextLevelButton.SetActive(true);
 
-			    // Display retry button
+			    // Display retry button.
 			    retryButton.SetActive(true);
 
-			    // hide shoot button
+			    // Hide shoot button.
 			    ShootButton.SetActive(false);
 
-			    // hide left arrow button
+			    // Hide left arrow button.
 			    LeftButton.SetActive(false);
 
-			    // hide right arrow button
+			    // Hide right arrow button.
 			    RightButton.SetActive(false);
 
-                //hide pause button
+                // Hide pause button.
                 PauseButton.SetActive(false);
 
-			    // hide player ship
+			    // Hide player ship.
 			    playerShip.SetActive(false);
 
 			break;
 		}
 	}
 
-	// set game manager state
+	// Set game manager state.
 	public void SetGameManagerState(GameManagerState state)
 	{
 		GMState = state;
@@ -276,20 +283,20 @@ public class GameManager : MonoBehaviour
 	}
 
 	// Out play button will call this function
-	// when the user clicks the button
+	// when the user clicks the button.
 	public void StartGamePlay()
 	{
 		GMState = GameManagerState.Gameplay;
 		UpdateGameManagerState ();
 	}
 
-	// change game manager state to opening state
+	// Change game manager state to opening state.
 	public void ChangeToOpeningState()
 	{
 		SetGameManagerState (GameManagerState.Opening);
 	}
 
-	// Load the next level
+	// Load the next level.
 	public void NextLevel()
 	{
 		if (level == 1) 

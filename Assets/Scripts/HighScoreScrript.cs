@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// this is the behavior fort he prefabs
+// This is the behavior fort he prefabs.
 public class HighScoreScrript : MonoBehaviour
 {
 

@@ -15,18 +15,19 @@ public class LoadAndSave : MonoBehaviour {
 	// Parent window to contian all components.
 	private Rect windowRect;
 
-	// List of users
+	// List of users.
 	public static List<User> savedUsers;
 
 	private string usernameString = string.Empty;
 	private string profileString = string.Empty;
 
-	//it's static so we can call it from anywhere
+	// It's static so we can call it from anywhere.
 	public static void Register(User user) 
 	{
 		LoadAndSave.savedUsers.Add(user);
 		BinaryFormatter bf = new BinaryFormatter();
-		//Application.persistentDataPath is a string, so if you wanted you can put that into debug.log if you want to know where save games are located
+		//Application.persistentDataPath is a string, so if you wanted you can
+		//put that into debug.log if you want to know where save games are located.
 		FileStream file = File.Create (Application.persistentDataPath + "/savedGames.gd"); //you can call it anything you want
 		bf.Serialize(file, LoadAndSave.savedUsers);
 		file.Close();
@@ -111,13 +112,6 @@ public class LoadAndSave : MonoBehaviour {
 			if (player != null) 
 			{
 				GameObject.FindObjectOfType<CurrentUser>().currentUser = player;
-				//profileString = "Found " +  currentUser.currentUser.getName() + "\nLevel: " + currentUser.currentUser.getLevel() +
-				//	"\nCurrency: " + currentUser.currentUser.getCurrency() + "\nScore: " + currentUser.currentUser.getScore();	
-				//profileString = "Found " +  player.getName() + 
-			//		"\nLevel: " + GameObject.FindObjectOfType<CurrentUser>().currentUser.getLevel() +
-		//			"\nCurrency: " + GameObject.FindObjectOfType<CurrentUser>().currentUser.getCurrency() +
-	//				"\nScore: " + GameObject.FindObjectOfType<CurrentUser>().currentUser.getScore();	
-				//SceneManager.LoadScene ("MainMenu", LoadSceneMode.Single);
 			}
 
 			// If a valid player is not found, indicate. 

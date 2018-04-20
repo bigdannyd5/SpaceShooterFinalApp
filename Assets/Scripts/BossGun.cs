@@ -10,45 +10,46 @@ public class BossGun : MonoBehaviour
 	private float nextFire = 0.0f;
     public GameManager Manager;
 
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () 
 	{
         
         Manager = FindObjectOfType<GameManager>();
 	}
 
-	// Update is called once per frame
+	// Update is called once per frame.
 	void Update ()
 	{
 		if (Time.time > nextFire) 
 		{
-            // fire next at a random value within the range
+            // Fire next at a random value within the range.
 			nextFire = Time.time + (fireRateStart + Random.value * fireRateRange);
 			FireBossBullet ();
 		}
 	}
 
-	// fire enemy bullet
+	// Fire enemy bullet.
 	void FireBossBullet()
 	{
-		// get reference to player's ship
+		// Get reference to player's ship.
 		GameObject playerShip = GameObject.Find("PlayerGO");
 
-		if (playerShip != null) // if player isn't dead
+		// If player isn't dead.
+		if (playerShip != null) 
 		{
-			// instantiate enemy bullet
+			// Instantiate enemy bullet.
 			GameObject bullet = (GameObject)Instantiate (EnemyBulletGO);
 
-			// bullet's initial position
+			// Bullet's initial position.
 			bullet.transform.position = transform.position;
 
-			// compute the bullet's direction towards the player's ship
-			
-			Vector2 direction = new Vector2(0,-1); // This way the bullets only go straight down. 
+			// Compute the bullet's direction towards the player's ship.
+			// This way the bullets only go straight down.
+			Vector2 direction = new Vector2(0,-1);  
             if ((Manager.GetComponent <GameManager>().level == 4) && (Random.value > 0.5f))
                 direction = playerShip.transform.position - bullet.transform.position;
 
-			// set the bullet's direction
+			// Set the bullet's direction.
 			bullet.GetComponent<EnemyBullet> ().SetDirection (direction);
 		}
 	}

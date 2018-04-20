@@ -9,7 +9,7 @@ public class BackToMainMenu : MonoBehaviour
     public GameObject Back;
     public Button backButton;
 
-    // Use this for initialization
+    // Use this for initialization.
     void Start()
     {
         backButton = Back.GetComponent<Button>();
@@ -17,7 +17,7 @@ public class BackToMainMenu : MonoBehaviour
 
     }
 
-    // loads the main menu scene
+    // Loads the main menu scene.
     private void BackToMain()
     {
         SceneManager.LoadScene(1);

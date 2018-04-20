@@ -13,21 +13,20 @@ public class EnemySpawner : MonoBehaviour
 
 	
 
-	// Spawn an enemy
+	// Spawn an enemy.
 	void SpawnEnemy()
 	{
-		// bottom-left point of screen
+		// Bottom-left point of screen.
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
 
-		// top-right point of screen
+		// Top-right point of screen.
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
-		// instantiate an enemy
+		// Instantiate an enemy.
 		GameObject anEnemy = (GameObject)Instantiate(EnemyGO);
 		anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
-        //anEnemy.GetComponent<EnemyGun>().enemyBulletSpeed = enemyBulletSpeed;
 
-		// Schedule when to spawn next enemy
+		// Schedule when to spawn next enemy.
 		ScheduleNextEnemySpawn();
 	}
 
@@ -43,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
 		Invoke ("SpawnEnemy", spawnInNSeconds);
 	}
 
-	// increase dificulty of game
+	// Increase dificulty of game.
 	void IncreaseSpawnRate()
 	{
 		if (maxSpawnRateInSeconds > spawnFloor)
@@ -53,19 +52,19 @@ public class EnemySpawner : MonoBehaviour
 			CancelInvoke ("IncreaseSpawnRate");
 	}
 
-	// start enemy spawner
+	// Start enemy spawner.
 	public void ScheduleEnemySpawner()
 	{
-		// reset max spawn rate
+		// Reset max spawn rate.
 		maxSpawnRateInSeconds = spawnRate;
 
 		Invoke ("SpawnEnemy", maxSpawnRateInSeconds);
 
-		// increase spawn rate every 20 seconds
+		// Increase spawn rate every 20 seconds.
 		InvokeRepeating ("IncreaseSpawnRate", 0f, spawnRate);
 	}
 
-	// stop enemy spawner
+	// Stop enemy spawner.
 	public void UnsheduleEnemySpawner()
 	{
 		CancelInvoke ("SpawnEnemy");

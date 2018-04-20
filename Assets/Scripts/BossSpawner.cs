@@ -11,24 +11,19 @@ public class BossSpawner : MonoBehaviour
     public float fireRateStart = 1.0f;
     public float fireRateRange = 1.0f;
 
-	// Spawn an enemy
+	// Spawn an enemy.
 	public void SpawnEnemy()
 	{
-		// bottom-left point of screen
-		//Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
-
-		// top-right point of screen
+		// Top-right point of screen.
 		Vector2 max = Camera.main.ViewportToWorldPoint (new Vector2 (1, 1));
 
-		// instantiate an enemy
+		// Instantiate an enemy.
 		GameObject aBoss = (GameObject)Instantiate(BossGO);
 
-		aBoss.transform.position = new Vector2 (0, max.y-1); // I'm not sure if this will work;
-		//aBoss.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
-
+		aBoss.transform.position = new Vector2 (0, max.y-1);
 		guns = aBoss.GetComponentsInChildren<BossGun>();
 
-        // we want to change this to a better randomizer 
+        // We want to change this to a better randomizer. 
         foreach (BossGun gun in guns)
         {
             gun.fireRateRange = fireRateRange;
@@ -38,10 +33,9 @@ public class BossSpawner : MonoBehaviour
 
 	public void DestroyBoss()
 	{
-		// if there's a boss destroy it
+		// If there's a boss destroy it.
 		if (GameObject.FindGameObjectWithTag("BossShipTag") != null) 
 		{
-			//GameObject cloneBoss = Instantiate (BossGO);
 			Destroy (GameObject.FindGameObjectWithTag("BossShipTag"));
 		}
 	}

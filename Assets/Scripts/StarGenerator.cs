@@ -4,41 +4,47 @@ using UnityEngine;
 
 public class StarGenerator : MonoBehaviour 
 {
-	public GameObject StarGO; // StarGo prefab
-	public int MaxStars; // maximum number of stars
+	// StarGo prefab.
+	public GameObject StarGO; 
+	// Maximum number of stars.
+	public int MaxStars;
 
-	// Array of colors
+	// Array of colors.
 	Color[] starColors = {
-		new Color (0.5f, 0.5f, 1f), // blue
-		new Color(0, 1f, 1f), // green
-		new Color(1f, 1f, 0), // yellow
-		new Color (1f, 0, 0), // red
+		// Blue.
+		new Color (0.5f, 0.5f, 1f), 
+		// Green.
+		new Color(0, 1f, 1f), 
+		// Yellow.
+		new Color(1f, 1f, 0),
+		// Red.
+		new Color (1f, 0, 0),
 	};
 
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () 
 	{
-		// bottom-left screen
+		// Bottom-left screen.
 		Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
 
-		// top-right screen
+		// Top-right screen.
 		Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
 
-		// loop to create the stars
+		// Loop to create the stars.
 		for (int i = 0; i < MaxStars; i++) 
 		{
 			GameObject star = (GameObject)Instantiate (StarGO);
 
-			// set the star color
+			// Set the star color.
 			star.GetComponent<SpriteRenderer>().color = starColors[i % starColors.Length];
 
-			// set the position of the star (random x and random y)
+			// Set the position of the star (random x and random y).
 			star.transform.position = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, min.y));
 
-			// random speed for the stars
+			// Random speed for the stars.
 			star.GetComponent<Star>().speed = -(1f * Random.value + 0.5f);
 
-			// make the star a child of the StarGeneratorGO
+			// Make the star a child of the StarGeneratorGO.
 			star.transform.parent = transform;
 		}
 	}
