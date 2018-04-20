@@ -1,0 +1,288 @@
+<aars>
+  <explodeData>
+    <aar>com.android.support.support-annotations-25.2.0</aar>
+    <modificationTime>0001-01-01T00:00:00.0000000-05:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-annotations-25.2.0.jar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-compat-25.2.0</aar>
+    <modificationTime>2018-04-10T02:05:32.7123270-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-compat-25.2.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-core-ui-25.2.0</aar>
+    <modificationTime>2018-04-10T02:05:32.7308748-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-core-ui-25.2.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-core-utils-25.2.0</aar>
+    <modificationTime>2018-04-10T02:05:32.7499274-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-core-utils-25.2.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-fragment-25.2.0</aar>
+    <modificationTime>2018-04-10T02:05:32.7664722-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-fragment-25.2.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-media-compat-25.2.0</aar>
+    <modificationTime>2018-04-10T02:05:32.7845190-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-media-compat-25.2.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.android.support.support-v4-25.2.0</aar>
+    <modificationTime>2018-04-10T02:05:32.8005763-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.android.support.support-v4-25.2.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-base-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:32.8186089-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-base-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-base-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:40.6584588-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-base-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-basement-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:32.8532056-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-basement-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-basement-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:41.0675464-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-basement-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-tasks-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:32.8807750-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-tasks-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.android.gms.play-services-tasks-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:41.4809955-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.android.gms.play-services-tasks-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-analytics-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:32.9043381-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-analytics-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-analytics-impl-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:32.9208801-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-analytics-impl-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-analytics-impl-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:41.9041200-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-analytics-impl-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-analytics-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:42.3209879-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-analytics-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-app-unity-4.5.0</aar>
+    <modificationTime>2018-04-10T02:05:42.9866780-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-app-unity-4.5.0.aar</path>
+    <targetAbi>fat</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-auth-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:32.9875574-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-auth-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-auth-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:43.4107432-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-auth-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-auth-unity-4.5.0</aar>
+    <modificationTime>2018-04-10T02:05:43.8575067-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-auth-unity-4.5.0.aar</path>
+    <targetAbi>fat</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-common-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:44.2696497-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-common-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-common-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:44.6941072-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-common-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-core-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:45.0948720-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-core-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-iid-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:45.5045862-04:00</modificationTime>
+    <explode>false</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-iid-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+  <explodeData>
+    <aar>com.google.firebase.firebase-iid-license-11.8.0</aar>
+    <modificationTime>2018-04-10T02:05:45.9167201-04:00</modificationTime>
+    <explode>true</explode>
+    <bundleId>com.Unity.SpaceShooterGame</bundleId>
+    <path>Assets/Plugins/Android/com.google.firebase.firebase-iid-license-11.8.0.aar</path>
+    <targetAbi>universal</targetAbi>
+    <gradleBuildEnabled>true</gradleBuildEnabled>
+    <gradleExport>false</gradleExport>
+    <ignoredVersion />
+  </explodeData>
+</aars>

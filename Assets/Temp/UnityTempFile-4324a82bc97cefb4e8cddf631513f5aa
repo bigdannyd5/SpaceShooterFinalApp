@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - ScoreTextTag
+  - PlayerShipTag
+  - GameManagerTag
+  - BossShipTag
+  - EnemyBulletTag
+  - EnemyShipTag
+  - PlayerBulletTag
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ethan
+  - MazeWalls
+  - MazeTurret
+  - MazeTurretBullet
+  - Bg
+  - FPSWeapon
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2379361113
+    locked: 0
+  - name: GamePlay
+    uniqueID: 4277825123
+    locked: 0
+  - name: Effects
+    uniqueID: 2861882671
+    locked: 0
