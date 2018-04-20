@@ -9,7 +9,7 @@ public class MeteorSpawner : MonoBehaviour
 	float maxSpawnRateInSeconds = 5f;
 	public float spawnRate = 20;
 
-	// Spawn an meteor
+	// Spawn an meteor.
 	void SpawnMeteor()
 	{
 		Vector2 min = Camera.main.ViewportToWorldPoint (new Vector2 (0, 0));
@@ -18,7 +18,7 @@ public class MeteorSpawner : MonoBehaviour
 		GameObject anEnemy = (GameObject)Instantiate(MeteorGo);
 		anEnemy.transform.position = new Vector2 (Random.Range (min.x, max.x), max.y);
 
-		// Schedule when to spawn next meteor
+		// Schedule when to spawn next meteor.
 		ScheduleNextMeteorSpawn();
 	}
 
@@ -34,7 +34,7 @@ public class MeteorSpawner : MonoBehaviour
 		Invoke ("SpawnMeteor", spawnInNSeconds);
 	}
 
-	// increase dificulty of game
+	// Increase dificulty of game.
 	void IncreaseSpawnRate()
 	{
 		if (maxSpawnRateInSeconds > 1f)
@@ -44,19 +44,19 @@ public class MeteorSpawner : MonoBehaviour
 			CancelInvoke ("IncreaseSpawnRate");
 	}
 
-	// start enemy spawner
+	// Start enemy spawner.
 	public void ScheduleMeteorSpawner()
 	{
-		// reset max spawn rate
+		// Reset max spawn rate.
 		maxSpawnRateInSeconds = 5f;
 
 		Invoke ("SpawnMeteor", maxSpawnRateInSeconds);
 
-		// increase spawn rate every 20 seconds
+		// Increase spawn rate every 20 seconds.
 		InvokeRepeating ("IncreaseSpawnRate", 0f, spawnRate);
 	}
 
-	// stop enemy spawner
+	// Stop enemy spawner.
 	public void UnsheduleEnemySpawner()
 	{
 		CancelInvoke ("SpawnMeteor");

@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemyGun : MonoBehaviour 
 {
-	public GameObject EnemyBulletGO; // our enemy bullet
+	// Our enemy bullet.
+	public GameObject EnemyBulletGO; 
     public GameManager Manager;
     public float enemyBulletSpeed = 2.0f;
     private float timeOffset = 0.5f;
     private int shotsRemaining = 1;
 
-	// Use this for initialization
+	// Use this for initialization.
 	void Start () 
 	{
 		Invoke ("FireEnemyBullet", 1f);
@@ -18,7 +19,7 @@ public class EnemyGun : MonoBehaviour
         timeOffset = Time.time + timeOffset;
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame.
 	void Update () 
 	{
 		if ((Time.time > timeOffset) && (shotsRemaining > 0) && (Manager.GetComponent <GameManager>().level == 4))
@@ -28,30 +29,30 @@ public class EnemyGun : MonoBehaviour
         }
 	}
 
-	// fire enemy bullet
+	// Fire enemy bullet.
 	void FireEnemyBullet()
 	{
-		// get reference to player's ship
+		// Get reference to player's ship.
 		GameObject playerShip = GameObject.Find("PlayerGO");
 
-		if (playerShip != null) // if player isn't dead
+		// If player isn't dead.
+		if (playerShip != null) 
 		{
-			// instantiate enemy bullet
+			// Instantiate enemy bullet.
 			GameObject bullet = (GameObject)Instantiate (EnemyBulletGO);
 
-			// bullet's initial position
+			// Bullet's initial position.
 			bullet.transform.position = transform.position;
 
-			// compute the bullet's direction towards the player's ship
+			// Compute the bullet's direction towards the player's ship.
 			Vector2 direction = playerShip.transform.position - bullet.transform.position;
             if (Manager.GetComponent<GameManager>().level == 1)
             {
                 bullet.GetComponent<EnemyBullet>().speed = enemyBulletSpeed;
                 direction = new Vector2(0.0f, -1.0f);
             }
-            
 
-			// set the bullet's direction
+			// Set the bullet's direction.
 			bullet.GetComponent<EnemyBullet> ().SetDirection (direction);
 		}
 	}

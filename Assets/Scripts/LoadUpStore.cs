@@ -10,7 +10,7 @@ public class LoadUpStore : MonoBehaviour
 
     public Button upgradeStoreButton;
 
-    // Use this for initialization
+    // Use this for initialization.
     void Start()
     {
         upgradeStoreButton = upgradeStore.GetComponent<Button>();
@@ -19,7 +19,7 @@ public class LoadUpStore : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    // Update is called once per frame.
     void Update()
     {
 

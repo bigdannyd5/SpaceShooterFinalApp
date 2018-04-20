@@ -6,11 +6,8 @@ using System;
 [System.Serializable]
 public class User : System.IComparable<User>
 {
-  //  User player = GameObject.FindObjectOfType<CurrentUser>().currentUser;
-
     private string name;
 	private int level;
-	//private int score;
 	private int currency;
 	private int life;
 	private int rateOfFire;
@@ -29,28 +26,26 @@ public class User : System.IComparable<User>
 
 		// Initial level will be 1.
 		this.level = 1;	
-
-		// Start score from 0.
-		//this.score = 0;
         
+		//Initial currency will be 0.
         this.currency = 0;
 
 		// Start life from 3.
 		this.life = 3;
 
-		// flag
+		// Flag.
 		this.rateOfFire = 0;
 
-		// flag
+		// Flag.
 		this.speed = 0;
 
 		// Start max health at 3.
 		this.maxHealth = 3;
 
-        // hardened bullet flag
+        // Hardened bullet flag.
         this.hard = 0;
 
-        // will be re-assigned
+		// Initialize score to 0.
         this.highScore = 0;
 
         this.fireMultiplier = 1.0f;
@@ -60,7 +55,7 @@ public class User : System.IComparable<User>
 	}
 
 
-    // this is used to sort the high scores
+    // This is used to sort the high scores.
     public int CompareTo(User other)
     {
         if (other.highScore < this.highScore)
@@ -76,10 +71,8 @@ public class User : System.IComparable<User>
         return 0;
 
     }
-
-
-
-    // our favorite getters and setters
+		
+    // Our favorite getters and setters.
     public string getName()
 	{
 		return this.name;

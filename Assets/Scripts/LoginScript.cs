@@ -13,7 +13,7 @@ public class LoginScript : MonoBehaviour
     
     public static List<User> savedUsers;
 
-    // the game objects used
+    // The game objects used.
     public GameObject createUser;
     public GameObject LoginUser;
     public GameObject UserC;
@@ -21,7 +21,7 @@ public class LoginScript : MonoBehaviour
     public GameObject CouldNot;
     public GameObject createdUser;
 
-    // the buttons with their functionalities
+    // The buttons with their functionalities.
     public Button LoginUserButton;
     public Button createUserButton;
 
@@ -36,24 +36,24 @@ public class LoginScript : MonoBehaviour
 
     private static string filename;
 
-    //flag
+    // Flag.
     int pf;
 
-    // Use this for initialization
+    // Use this for initialization.
     void Start()
     {
         filename = Application.persistentDataPath + "/savedGames3.gd";
-        // if persistent data file for saved games does not exist, make one
+        // If persistent data file for saved games does not exist, make one.
         if (!(File.Exists(filename)))
             file = File.Create(filename);
 
-        // a list containing all of the users
+        // A list containing all of the users.
         savedUsers = new List<User>();
 
         LoginUserButton.onClick.AddListener(LoadMainMenu);
     }
 
-    // is reponsibel for logging in and checking for if the user does not exist
+    // Is reponsible for logging in and checking for if the user does not exist.
     public void Login()
     {
 
@@ -80,14 +80,14 @@ public class LoginScript : MonoBehaviour
 
     }
 
-    // responsible for loading info
+    // Responsible for loading info.
     public static void Load()
     {
         if (File.Exists(filename))
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(filename, FileMode.Open);
-            // if there is no file, create an empty list of users
+            // If there is no file, create an empty list of users.
             if (file.Length == 0)
                 LoginScript.savedUsers = new List<User>();
             else
@@ -96,8 +96,8 @@ public class LoginScript : MonoBehaviour
         }
     }
     
-    // This function does not verify if a user is duplicated
-    // That must be done by the caller if duplicates are to be avoided
+    // This function does not verify if a user is duplicated.
+    // That must be done by the caller if duplicates are to be avoided.
     public static void Save(User user)
     {
         if (File.Exists(Application.persistentDataPath + "/savedGames3.gd"))
@@ -105,16 +105,13 @@ public class LoginScript : MonoBehaviour
             Load();
             LoginScript.savedUsers.Add(user);
             BinaryFormatter bf = new BinaryFormatter();
-            //Application.persistentDataPath is a string, so if you wanted you can put that into debug.log if you want to know where save games are located
-            FileStream file = File.Open(Application.persistentDataPath + "/savedGames3.gd", FileMode.Open); //you can call it anything you want
+            //Application.persistentDataPath is a string, so if you wanted you can put
+			//that into debug.log if you want to know where save games are located.
+            FileStream file = File.Open(Application.persistentDataPath + "/savedGames3.gd", FileMode.Open);
             bf.Serialize(file, LoginScript.savedUsers);
             file.Close();
         }
     }
-
-
-
-
 
     public void RegisterUser()
     {
@@ -142,31 +139,27 @@ public class LoginScript : MonoBehaviour
 
     }
 
-    // used for the invoke method call
+    // Used for the invoke method call.
     public void CreatedStuff()
     {
         createdUser.SetActive(false);
     }
-    // used for the invoke method call
+    // Used for the invoke method call.
     public void DoOtherStuff()
     {
         playerNotFound.SetActive(false);
     }
-    // used for the invoke method call
+    // Used for the invoke method call.
     public void DoStuff()
     {
         CouldNot.SetActive(false);
     }
 
-    // simply loads up the scene that holds the MainMenu
+    // Simply loads up the scene that holds the MainMenu.
     private void LoadMainMenu()
     {
-    
         if((enterUsername.text != String.Empty) && pf!=1)
-            SceneManager.LoadScene(1);
-     
+            SceneManager.LoadScene(1);  
     }
-
-
 
 }
